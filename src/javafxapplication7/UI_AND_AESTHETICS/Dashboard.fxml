@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.ProgressIndicator?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="DashboardAnchorPane" prefHeight="595.0" prefWidth="1125.0" styleClass="parent" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication7.UI_AND_AESTHETICS.DashboardController">
+    <stylesheets>
+        <URL value="@dashboard.css" />
+    </stylesheets>
+   <children>
+      <VBox layoutY="-8.0" prefHeight="618.0" prefWidth="300.0" styleClass="sidebar">
+         <children>
+            <Label prefHeight="75.0" prefWidth="300.0" style="-fx-background-color: #00A2D3;" text="Admin Panel" textFill="WHITE">
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+               <font>
+                  <Font name="Ebrima" size="18.0" />
+               </font>
+            </Label>
+            <HBox fx:id="horzDashboard" alignment="CENTER_LEFT" onMouseClicked="#switchScene">
+               <children>
+                  <FontAwesomeIconView glyphName="DASHBOARD" glyphStyle="-fx-fill:#7C8184" size="1.3em" />
+                  <Button fx:id="btnDashboard" blendMode="LIGHTEN" mnemonicParsing="false" onAction="#switchScene" style="-fx-background-color: #363232;" text="Dashboard" textFill="#7c8184" />
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox fx:id="hbTimetable" alignment="CENTER_LEFT" layoutX="10.0" layoutY="95.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#switchScene" prefHeight="40.0" prefWidth="300.0" styleClass="btns">
+               <children>
+                  <FontAwesomeIconView glyphName="LIST" glyphStyle="-fx-fill:#7C8184" size="1.3em" />
+                  <Button fx:id="btnTimetable" blendMode="LIGHTEN" mnemonicParsing="false" onAction="#switchScene" style="-fx-background-color: #363232;" text="Timetable" textFill="#7c8184" />
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="132.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="300.0" styleClass="btns">
+               <children>
+                  <FontAwesomeIconView glyphName="USER" glyphStyle="-fx-fill:#7C8184" size="1.3em" />
+                  <Button fx:id="btnStaff" blendMode="LIGHTEN" mnemonicParsing="false" onAction="#switchScene" style="-fx-background-color: #363232;" text="Staff" textFill="#7c8184" />
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="172.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="300.0" styleClass="btns">
+               <children>
+                  <FontAwesomeIconView glyphName="USERS" glyphStyle="-fx-fill:#7C8184" size="1.3em" />
+                  <Button fx:id="btnManageUsers" blendMode="LIGHTEN" mnemonicParsing="false" onAction="#switchScene" style="-fx-background-color: #363232;" text="Manage Users" textFill="#7c8184" />
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="212.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="300.0" styleClass="btns">
+               <children>
+                  <FontAwesomeIconView glyphName="SIGNAL" glyphStyle="-fx-fill:#7C8184" size="1.3em" />
+                  <Button fx:id="btnStatistics" blendMode="LIGHTEN" mnemonicParsing="false" onAction="#switchScene" style="-fx-background-color: #363232;" text="Statistics" textFill="#7c8184" />
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="252.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="300.0" styleClass="btns">
+               <children>
+                  <FontAwesomeIconView glyphName="FOLDER" glyphStyle="-fx-fill:#7C8184" size="1.3em" />
+                  <Button fx:id="btnAccounts" blendMode="LIGHTEN" mnemonicParsing="false" onAction="#switchScene" style="-fx-background-color: #363232;" text="Accounts" textFill="#7c8184" />
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+
+            </HBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" styleClass="Box" VBox.vgrow="ALWAYS">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0" />
+               </children>
+               <padding>
+                  <Insets left="10.0" top="10.0" />
+               </padding>
+            </VBox>
+         </children>
+      </VBox>
+      <VBox layoutX="298.0" layoutY="6.0" prefHeight="600.0" prefWidth="724.0">
+         <children>
+            <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="870.0" style="-fx-background-color: #fff;">
+               <effect>
+                  <DropShadow blurType="ONE_PASS_BOX" color="#e5e3e3" height="10.0" radius="4.5" width="10.0" />
+               </effect>
+               <children>
+                  <Label fx:id="lblTitle" layoutX="311.0" layoutY="15.0" text="Dashboard" textFill="#7c8184">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <FontAwesomeIconView glyphName="BELL" glyphStyle="-FX-FILL:#7C8184" layoutX="747.0" layoutY="21.0" size="1.5EM" text="" />
+                  <FontAwesomeIconView glyphName="GEAR" glyphStyle="-FX-FILL:#7C8184" layoutX="783.0" layoutY="21.0" size="1.5EM" />
+                  <Label alignment="CENTER" layoutX="755.0" layoutY="-4.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="20.0" styleClass="round-lbl" text="8" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnExitDashboard" layoutX="808.0" mnemonicParsing="false" onAction="#exit" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <FontAwesomeIconView fill="#0598ff" glyphName="CLOSE" size="18" />
+                     </graphic>
+                  </Button>
+                  <Label fx:id="lblUser" layoutX="14.0" layoutY="15.0" text="Dashboard" textFill="#7c8184">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <AnchorPane prefHeight="531.0" prefWidth="807.0">
+               <children>
+                  <AnchorPane fx:id="anchDashboard" prefHeight="527.0" prefWidth="724.0" visible="false">
+                     <children>
+                        <HBox alignment="CENTER" layoutY="243.0" prefHeight="278.0" prefWidth="724.0">
+                           <children>
+                              <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="275.0" prefWidth="300.0" styleClass="card-01" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="52.0" prefWidth="244.0" style="-fx-background-color: #72D3FE;" text="Today's Revenue">
+                                       <font>
+                                          <Font name="Ebrima Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="160.0" prefWidth="160.0" style="-fx-border-color: #72D3FE;" styleClass="round-box">
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                       <children>
+                                          <ProgressIndicator progress="0.56" radius="70.0" />
+                                       </children>
+                                    </HBox>
+                                    <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="52.0" prefWidth="242.0" style="-fx-background-color: #72D3FE;" text="56%">
+                                       <font>
+                                          <Font name="Ebrima Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="275.0" prefWidth="285.0" styleClass="card-02" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="52.0" prefWidth="244.0" style="-fx-background-color: #FFC65C;" text="Today's Revenue">
+                                       <font>
+                                          <Font name="Ebrima Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="160.0" prefWidth="160.0" style="-fx-border-color: #72D3FE;" styleClass="round-box">
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                       <children>
+                                          <ProgressIndicator progress="0.56" radius="70.0" />
+                                       </children>
+                                    </HBox>
+                                    <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="52.0" prefWidth="242.0" style="-fx-background-color: #FFC65C;" text="56%">
+                                       <font>
+                                          <Font name="Ebrima Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="275.0" prefWidth="310.0" styleClass="card-03" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="52.0" prefWidth="244.0" style="-fx-background-color: #45B7AF;" text="Today's Revenue">
+                                       <font>
+                                          <Font name="Ebrima Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="160.0" prefWidth="160.0" style="-fx-border-color: #72D3FE;" styleClass="round-box">
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                       <children>
+                                          <ProgressIndicator progress="0.56" radius="70.0" />
+                                       </children>
+                                    </HBox>
+                                    <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="52.0" prefWidth="242.0" style="-fx-background-color: #45B7AF;" text="56%">
+                                       <font>
+                                          <Font name="Ebrima Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <LineChart fx:id="chartDashboardLineChart" layoutX="7.0" layoutY="7.0" legendVisible="false" prefHeight="239.0" prefWidth="884.0" styleClass="chart-series-line" stylesheets="@dashboard.css" title="Monthly Earnings">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="anchTimetable" prefHeight="527.0" prefWidth="731.0" visible="false" />
+                  <AnchorPane fx:id="anchStaff" prefHeight="527.0" prefWidth="724.0" visible="false" />
+                  <AnchorPane fx:id="anchManageUsers" layoutX="7.0" layoutY="-3.0" prefHeight="527.0" prefWidth="738.0">
+                     <children>
+                        <TableView fx:id="tblDataView" layoutX="306.0" prefHeight="534.0" prefWidth="550.0" />
+                        <AnchorPane layoutX="-4.0" prefHeight="534.0" prefWidth="311.0">
+                           <children>
+                              <AnchorPane fx:id="anchSearch" layoutY="87.0" prefHeight="447.0" prefWidth="311.0" visible="false" />
+                              <AnchorPane fx:id="anchCreate" layoutY="87.0" prefHeight="447.0" prefWidth="320.0" visible="false">
+                                 <children>
+                                    <TextField fx:id="txtFnameCreate" layoutX="115.0" layoutY="20.0" />
+                                    <TextField fx:id="txtLnameCreate" layoutX="115.0" layoutY="78.0" />
+                                    <TextField fx:id="txtPhoneNumberCreate" layoutX="117.0" layoutY="139.0" />
+                                    <Label layoutX="17.0" layoutY="24.0" text="First Name:" />
+                                    <Label layoutY="275.0" text="Admin Priviledge:" />
+                                    <Label layoutX="14.0" layoutY="143.0" prefHeight="18.0" prefWidth="102.0" text="Phone Number:" />
+                                    <TextField fx:id="txtHourlyRateCreate" layoutX="117.0" layoutY="198.0" />
+                                    <Label layoutX="17.0" layoutY="82.0" text="Last Name:" />
+                                    <ChoiceBox fx:id="chxAdminPriviledge" layoutX="118.0" layoutY="270.0" prefWidth="150.0" />
+                                    <Label layoutX="13.0" layoutY="202.0" text="Hourly Rate:" />
+                                    <TextField fx:id="txtPasswordCreate" layoutX="117.0" layoutY="336.0" />
+                                    <Label layoutX="16.0" layoutY="340.0" text="Password:" />
+                                    <Button fx:id="btnCreateExecute" layoutX="128.0" layoutY="395.0" mnemonicParsing="false" onAction="#ConfirmCreation" prefHeight="32.0" prefWidth="131.0" text="Execute" />
+                                 </children></AnchorPane>
+                              <AnchorPane fx:id="anchUpdate" layoutY="87.0" prefHeight="447.0" prefWidth="311.0">
+                                 <children>
+                                    <AnchorPane fx:id="anchUpdateSearch" layoutX="-1.0" layoutY="-2.0" prefHeight="86.0" prefWidth="313.0">
+                                       <children>
+                                          <Line endX="189.66668701171875" layoutX="118.0" layoutY="12.0" startX="-118.0" />
+                                          <Label layoutX="8.0" layoutY="14.0" text="Search Employee" />
+                                          <Label layoutX="7.0" layoutY="34.0" text="By the ID Number" />
+                                          <Line endX="211.33331298828125" layoutX="99.0" layoutY="86.0" startX="-100.0" />
+                                          <TextField fx:id="txtSearchUpdate" layoutX="133.0" layoutY="21.0" prefHeight="26.0" prefWidth="160.0" />
+                                          <Button fx:id="btnUpdateFind" layoutX="175.0" layoutY="52.0" mnemonicParsing="false" onAction="#SearchUpdate" prefHeight="28.0" prefWidth="81.0" text="Find" />
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane fx:id="anchUpdateFields" layoutX="-1.0" layoutY="85.0" prefHeight="364.0" prefWidth="312.0">
+                                       <children>
+                                          <Label layoutX="14.0" layoutY="59.0" text="Last Name:" />
+                                          <Label layoutX="16.0" layoutY="14.0" text="First Name:" />
+                                          <Label layoutX="3.0" layoutY="115.0" text="Phone Number:" />
+                                          <Label layoutX="22.0" layoutY="230.0" text="Poistion:" />
+                                          <Label layoutX="14.0" layoutY="173.0" text="Hourly Rate:" />
+                                          <Label layoutX="17.0" layoutY="279.0" text="Password:" />
+                                          <Button fx:id="btnExecuteUpdate" layoutX="127.0" layoutY="318.0" mnemonicParsing="false" onAction="#UpdateEmployee" prefHeight="32.0" prefWidth="160.0" text="Execute" />
+                                          <TextField fx:id="txtUpdateFname" layoutX="117.0" layoutY="10.0" prefHeight="26.0" prefWidth="181.0" />
+                                          <TextField fx:id="txtUpdateLname" layoutX="117.0" layoutY="55.0" prefHeight="26.0" prefWidth="181.0" />
+                                          <TextField fx:id="txtUpdatePhoneNumber" layoutX="117.0" layoutY="111.0" prefHeight="26.0" prefWidth="181.0" />
+                                          <TextField fx:id="txtUpdateHourlyRate" layoutX="117.0" layoutY="169.0" prefHeight="26.0" prefWidth="181.0" />
+                                          <TextField fx:id="txtUpdatePassword" layoutX="117.0" layoutY="275.0" prefHeight="26.0" prefWidth="181.0" />
+                                          <ChoiceBox fx:id="chxUpdatePosition" layoutX="117.0" layoutY="227.0" prefWidth="150.0" />
+                                       </children>
+                                    </AnchorPane>
+                                 </children></AnchorPane>
+                              <AnchorPane fx:id="anchDelete" layoutY="94.0" prefHeight="440.0" prefWidth="311.0" visible="false">
+                                 <children>
+                                    <TextField fx:id="txtEmployeeIDDelete" layoutX="115.0" layoutY="56.0" />
+                                    <TextField fx:id="txtLNameDelete" layoutX="115.0" layoutY="256.0" />
+                                    <TextField fx:id="txtFNameDelete" layoutX="115.0" layoutY="157.0" />
+                                    <Label layoutX="14.0" layoutY="60.0" text="Employee ID:" />
+                                    <Label layoutX="14.0" layoutY="161.0" text="First Name:" />
+                                    <Label layoutX="14.0" layoutY="260.0" text="Last Name:" />
+                                    <Button fx:id="btnExecuteDelete" layoutX="111.0" layoutY="346.0" mnemonicParsing="false" onAction="#ConfirmDelete" prefHeight="32.0" prefWidth="160.0" text="Execute" />
+                                 </children></AnchorPane>
+                              <Button fx:id="btnSearch" layoutX="14.0" layoutY="8.0" mnemonicParsing="false" onAction="#switchButton" prefHeight="32.0" prefWidth="131.0" text="Search" />
+                              <Button fx:id="btnCreate" layoutX="165.0" layoutY="8.0" mnemonicParsing="false" onAction="#switchButton" prefHeight="32.0" prefWidth="131.0" text="Create" />
+                              <Button fx:id="btnUpdate" layoutX="14.0" layoutY="49.0" mnemonicParsing="false" onAction="#switchButton" prefHeight="32.0" prefWidth="131.0" text="Update" />
+                              <Button fx:id="btnDelete" layoutX="165.0" layoutY="49.0" mnemonicParsing="false" onAction="#switchButton" prefHeight="32.0" prefWidth="131.0" text="Delete" />
+                           </children>
+                        </AnchorPane>
+                     </children></AnchorPane>
+                  <AnchorPane fx:id="anchStatistics" prefHeight="527.0" prefWidth="738.0" visible="false" />
+                  <AnchorPane fx:id="anchAccounts" prefHeight="527.0" prefWidth="738.0" visible="false" />
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
